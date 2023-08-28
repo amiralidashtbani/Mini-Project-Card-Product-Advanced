@@ -2,4 +2,129 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: 0;
+}
+
+@font-face {
+    font-family: tanha;
+    src: url(../font/Tanha-FD.woff2) format('woff2');
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: tanha;
+}
+
+
+.container {
+    max-width: 90%;
+    margin: 2rem auto;
+    display: grid;
+    justify-content: center;
+}
+
+.box-product {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 3rem 1rem;
+}
+
+.product-item {
+    width: 290px;
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.product-item:hover {
+    background-color: #31a9cc;
+    box-shadow: 0 8px 24px -1px #31a9cc;
+}
+
+.product-item:hover .caption-product {
+    color: #fff;
+}
+
+.product-item:hover .btn-add-to-card {
+    background-color: #feac00;
+    color: #fff;
+}
+
+.product-item:hover .img-product {
+    top: -40px;
+}
+
+img {
+    width: 100%;
+}
+
+.img-product {
+    margin: 0 auto 3rem auto;
+    position: relative;
+    top: 0;
+    transition: all 0.3s ease;
+}
+
+.img-product::after {
+    content: '';
+    position: absolute ;
+    top: 50px;
+    left: 30%;
+    width: 42%;
+    height: 5%;
+    display: block;
+    border-radius: 100%;
+    box-shadow: 0 123px 20px 10px rgba(0,0,0,0.2), 0 123px 20px 10px rgba(0,0,0,0.3);
+}
+
+.caption-product {
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.title-product {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.text-product {
+    margin-bottom: 1rem;
+}
+
+.price-product {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.btn-add-to-card {
+    font-family: 'tanha';
+    background-color: transparent;
+    border: 2px solid #feac00;
+    padding: 12px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width:1350px) {
+    .box-product {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .box-product {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .box-product {
+        grid-template-columns: repeat(1,1fr);
+    }
 }
